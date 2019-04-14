@@ -53,7 +53,9 @@ def build_model(look_back: int, batch_size: int=1) -> Sequential:
     
     model = Sequential()
     model.add(LSTM(64,
-                   activation='relu',
+                   activation='tanh',
+                   recurrent_activation='hard_sigmoid',
+                   use_bias=True,
                    batch_input_shape=(batch_size, look_back, 1),
                    stateful=True,
                    return_sequences=False))
