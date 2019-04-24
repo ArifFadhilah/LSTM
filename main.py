@@ -52,7 +52,7 @@ def split_dataset(dataset: numpy.ndarray, train_size, look_back) -> (numpy.ndarr
 def build_model(look_back: int, batch_size: int=1) -> Sequential:
     
     model = Sequential()
-    model.add(LSTM(64,
+    model.add(LSTM(500,
                    activation='tanh',
                    recurrent_activation='hard_sigmoid',
                    use_bias=True,
